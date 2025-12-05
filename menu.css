@@ -1,0 +1,206 @@
+body {
+    display: grid;
+    grid-template-areas: 
+    "header header navbar"
+    "container container container"
+    "footer footer footer";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 20%, 40vh, 100px, 10%;
+    background-color: #faf6ce72;
+}
+
+.container {
+    grid-area: container;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 400px);
+
+    padding: 1rem;
+    gap: 10px;
+ 
+}
+
+
+.container .pic img {
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    height: 400px;
+    width: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-left: 35px;
+}
+
+
+
+@media (max-width:786px) { .container {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(9, 420px);
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    margin-top: 5px;
+
+}
+
+.container .pic img {
+  width: 250px;
+  max-width: 100%;  /* shrink image width */
+  height: 400px;
+  max-height: 400px; /* reduce image height */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto; /* center image */
+}
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+}
+
+
+.navbar {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar nav {
+    align-content: center;
+    justify-content: center;
+    justify-items: right;
+    align-self: baseline;
+    padding: 20px;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: #700303;
+  }
+  
+  .menu-toggle {
+    display: none; /* hide the button on desktop */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-color: #700303;
+  }
+  
+  .logo {
+    height: 60px;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #700303;
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-links a:hover {
+    border: 5px solid #700303;
+    background-color: #f3f2e1;
+    color: #700303;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+  
+  /* --- Mobile Styles (Slide-in Menu) --- */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block; /* show hamburger icon */
+      color: white;
+    }
+  
+    /* Menu styles */
+    .nav-links {
+      display: none; /* hide links by default */
+      position: fixed; /* fix the menu to the screen */
+      top: 0;
+      left: -250px; /* hide the menu off-screen initially */
+      width: 250px; /* set the width of the menu */
+      height: 100%; /* cover the full height */
+      background-color: #700303; /* dark transparent background */
+      flex-direction: column;
+      align-items: flex-start; /* align items to the left */
+      padding: 2rem; /* space around the links */
+      z-index: 9999; /* ensure it's on top */
+      opacity: 0; /* initially hidden */
+      visibility: hidden; /* initially hidden */
+      transition: left 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* smooth slide-in transition */
+    }
+  
+    .nav-links.active {
+      left: 0; /* slide the menu in from the left */
+      opacity: 1; /* show the menu */
+      visibility: visible; /* make it visible */
+      display: flex;
+    }
+  
+    .nav-links a {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 1.5rem; /* space the links out vertically */
+      text-align: left; /* left-align the text */
+    }
+
+    .nav-links.active a:hover {
+        border: 5px solid #700303;
+        background-color: #f3f2e1;
+        color: #700303;
+        padding: 20px;
+        border-radius: 40px;
+    }
+
+  }
+
+  .navbar {
+    background-color: #700303;
+  }
+
+.footer {
+    display: flex;
+    background-color: #700303;
+    color: white;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+}
+
+.footer span {
+    display: inline-block;
+}
+ 
+  
