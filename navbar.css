@@ -4,7 +4,7 @@
     gap: 1rem;
     padding: 1rem 2rem;
     background-color: #700303;
-}
+  }
   
   .menu-toggle {
     display: none; /* hide the button on desktop */
@@ -76,6 +76,7 @@
       visibility: hidden; /* initially hidden */
       transition: left 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* smooth slide-in transition */
     }
+
   
     .nav-links.active {
       left: 0; /* slide the menu in from the left */
@@ -121,6 +122,4 @@
     display: inline-block;
 }
  
-
   
-
